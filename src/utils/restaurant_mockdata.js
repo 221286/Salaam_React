@@ -1,42 +1,4 @@
-import React from "react";
-import  ReactDOM  from "react-dom/client";
-
-
-
-const Heads = ()=>{
-    return (<div className="header-container">
-            <div className="logo-container">
-                <img alt="logo" src="https://lh3.googleusercontent.com/p/AF1QipOVNE6m7ba7UwPl7Q4LiWxc7mzyUCfAVCtPHCE1=w1080-h608-p-no-v0"/>
-            </div>
-            <div className="nav-container">
-                <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Contact us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-    </div>)
-};
-
-const Restcard =(props)=>{
-    const {restaurant}=props;
-    const {name,avgRating,cuisines}=restaurant?.info;    //optioanl chaining using '?' and destructuring in {};
-    return (
-        <div className="card-container">
-            <div className="card-image-container">
-                <img alt="not loaded" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+restaurant.info.cloudinaryImageId}/>
-            </div>
-            <h3>{name}</h3>
-            <h4> {avgRating} Star</h4>
-            <h4>{cuisines.join(" , ")}</h4>
-            <h4>{restaurant.info.sla.deliveryTime} mins</h4>
-        </div>
-    )
-}; 
-
-
-const restaurantobj= [
+export const RESTAURANTLIST= [
     {
       "info": {
         "id": "113317",
@@ -2039,26 +2001,3 @@ const restaurantobj= [
       }
     },
   ]
-
-const Body = ()=>{
-    return (
-        <div className="body-container">
-            <div className="search-container">
-            Search space{restaurantobj.length}
-            </div>
-            <div className="restcard-container">
-            {restaurantobj.map((restra)=>(<Restcard key={restra.info.id} restaurant={restra}></Restcard>))}
-            </div>
-        </div>
-    )
-}
-
-const App_layout =()=>{
-    return (<div className="main-container">
-              <Heads></Heads>
-              <Body />
-    </div>)
-}
-
-const root =ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App_layout />);

@@ -1,0 +1,2 @@
+export const CDN_CLOUDINARY_UI= "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
+export const HEADER_LOGO_UI= "https://pbs.twimg.com/profile_images/1093816939602862080/lpdhQMKs_400x400.jpg";
