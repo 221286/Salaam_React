@@ -1,6 +1,7 @@
 #root{
     --border-color-:#000000;
     --card-color-:#f0f0f0;
+    --button-color:#FC8019;
 }
 .header-container{
     display:flex;
@@ -30,6 +31,7 @@
 .search-container{
     padding:2rem;
     margin:1.1rem;
+    display:flex;
 }
 .card-container{
     background-color:var(--card-color-);
@@ -57,3 +59,28 @@
     height:20vh;
     border-radius: 5px;
 }
+
+.Shimmer-card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.Shimmer-card{
+    background-color:var(--card-color-);
+    width:300px;
+    height:400px;
+    border-radius: 5px;
+    margin: 4rem;
+
+}
+.Header-login-button{
+    padding:4px 7px;
+    cursor: pointer;
+    
+}
+.filter{
+    margin: 0rem 1.1rem;
+}
+
+
+
