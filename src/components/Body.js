@@ -25,7 +25,7 @@ const Body = ()=>{
         <div className="body-container">
             <div className="search-container">
                 <div className="search">
-                <input type="text"  onChange={(e)=>{setsearch(e.target.value)}} value={getsearch} />
+                <input type="text"  onChange={(e)=>{setsearch(e.target.value)} } className="Do" value={getsearch} />
                 <button  onClick={()=>{
                     
                     
