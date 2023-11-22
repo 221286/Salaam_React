@@ -1,6 +1,7 @@
+import Classyuser from "./classyuser";
+
 const Aboutus =()=>{return (<div>
-    <h1>This is About Us section</h1>
-    <h3>Hi I am the Developer Anis Osama</h3>
+    <Classyuser name={"Anis Osama"} contact={"8210218453"}></Classyuser>
 </div>)}
 
 export default Aboutus;

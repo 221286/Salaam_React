@@ -45,7 +45,8 @@ const Body = ()=>{
                 setfilteredRestaurantlist(filter_list);
                 console.log(filter_list);
 
-            }}>Filter</button>
+            }}>Rating 4.0
+            + </button>
             </div>
             </div>
             <div className="restcard-container">

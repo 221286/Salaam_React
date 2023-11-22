@@ -82,5 +82,12 @@
     margin: 0rem 1.1rem;
 }
 
+.classy{
+    border: 1px solid var(--border-color-);
+    margin: 2rem;
+    padding-left: 1rem;
+    border-radius: 0.5rem;
+}
+
 
 
