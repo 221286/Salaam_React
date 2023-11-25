@@ -3,9 +3,10 @@ import Restcard from "./Restcard.js";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer.js";
 import { Link } from "react-router-dom";
+import { SWIGGY_CARD} from "../utils/constants.js";
 const Body = ()=>{
 
-      const [getsearch,setsearch] = useState("");
+      const [getsearch,setsearch] = useState(null);
       const [getRestaurantlist,setRestaurantlist] = useState([]);
       const [filterRestaurantlist,setfilteredRestaurantlist]= useState([]);
 
@@ -15,7 +16,7 @@ const Body = ()=>{
       ,[]);
 
       const fetchdata = async ()=>{
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9855475&lng=77.7122996&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch(SWIGGY_CARD);
         const json = await data.json();
         setRestaurantlist(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setfilteredRestaurantlist(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);

@@ -1,27 +1,17 @@
-import { useEffect } from "react";
-import { useState } from "react";
+
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-
+import useGetResmenu from "../utils/useGetResmenu";
 
  const Restmenulist =()=>{
      const {resId} = useParams();
+     const data_list = useGetResmenu(resId);
      
      
- const [getlist,setList] = useState(null);
-    useEffect(()=>{
-        fetchData();
-    },[])
-    
-    const fetchData = async()=>{
-         const Data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9855475&lng=77.7122996&restaurantId="+resId);
-         const jason =await Data.json();
-         console.log(jason.data.cards[2].groupedCard.cardGroupMap.REGULAR);
-         setList(jason.data);
-         }
-         if (getlist === null){return <Shimmer></Shimmer>} 
-         const {name,costForTwoMessage,cuisines}=getlist?.cards[0]?.card?.card?.info;
-         const {itemCards}=getlist?.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card;
+ 
+         if (data_list === null){return (<Shimmer></Shimmer>)} 
+         const {name,costForTwoMessage,cuisines}=data_list?.cards[0]?.card?.card?.info;
+         const {itemCards}=data_list?.cards[2].groupedCard.cardGroupMap.REGULAR.cards[2].card.card;
     return (<div>
     <h1>{name}</h1>
     <h3>cuisines - {cuisines.join(",")}: {costForTwoMessage}</h3>
