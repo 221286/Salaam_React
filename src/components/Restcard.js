@@ -11,7 +11,7 @@ const Restcard =(props)=>{
                 <img alt="not loaded" className="rounded-xl" src={CDN_CLOUDINARY_UI + cloudinaryImageId}/>
             </div>
             <h3 className="font-bold">{name}</h3>
-            <h4> {avgRating} Star</h4>
+            <h4> {avgRating} ⭐</h4>
             <h4>{cuisines.join(" , ")}</h4>
             <h4>{restaurant.info.sla.deliveryTime} mins</h4>
         </div>

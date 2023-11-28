@@ -29,7 +29,7 @@ const Body = ()=>{
       const Enhanced_card= Highercardcomponent(Restcard); 
 
       const internet_status = useOnlinestatus();
-      console.log(getRestaurantlist.filter((res)=>res.info.aggregatedDiscountInfoV3!=undefined));
+      //console.log(getRestaurantlist.filter((res)=>res.info.aggregatedDiscountInfoV3!=undefined));
       const defined_restauranrlist=getRestaurantlist.filter((res)=>res.info.aggregatedDiscountInfoV3!=undefined)
       
       if (internet_status === false){return (<h1>Ooops You're offline</h1>)};

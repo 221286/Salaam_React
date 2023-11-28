@@ -6,7 +6,7 @@ class Classyuser extends React.Component{
         this.state={
             count:1,
         }
-        console.log("this is child constructor") 
+        //console.log("this is child constructor") 
     }
     componentDidMount(){
         console.log("this is child did mount");
