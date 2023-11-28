@@ -6,19 +6,19 @@ import useOnlinestatus from "../utils/useOnlinestatus.js";
 const Heads = ()=>{
     const [getbutton,setbutton]= useState("Login");
     const internet_status = useOnlinestatus();
-    return (<div className="header-container">
-            <div className="logo-container">
+    return (<div className="flex justify-between border border-orange-700 rounded-lg p-3 mx-1 items-center shadow-lg">
+            <div className="w-28">
                 <img alt="logo" src={HEADER_LOGO_UI}/>
             </div>
-            <div className="nav-container">
-                <ul>
-                    <li>Onlinestatus:{internet_status === true ?"✅":"🔴"}</li>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/About">About</Link></li>
-                    <li><Link to="/Contact">Contact us</Link></li>
-                    <li><Link to="Grocery">Grocery</Link></li>
-                    <li>Cart</li>
-                    <li><button  className="Header-login-button" onClick={()=>{getbutton === "Login" ? setbutton("Logout") : setbutton("Login");
+            <div className="">
+                <ul className="flex items-center  text-xl">
+                    <li className="m-5 p-3">Onlinestatus:{internet_status === true ?"✅":"🔴"}</li>
+                    <li className="m-5 p-3"><Link to="/">Home</Link></li>
+                    <li className="m-5 p-3"><Link to="/About">About</Link></li>
+                    <li className="m-5 p-3"><Link to="/Contact">Contact us</Link></li>
+                    <li className="m-5 p-3"><Link to="Grocery">Grocery</Link></li>
+                    <li className="m-5 p-3">Cart</li>
+                    <li className="m-5 p-3"><button  className="p-2 px-3 bg-orange-400 rounded-lg shadow-xl hover:cursor-pointer" onClick={()=>{getbutton === "Login" ? setbutton("Logout") : setbutton("Login");
                 
                 }}>{getbutton} </button></li>
                 </ul>

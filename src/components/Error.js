@@ -6,7 +6,7 @@ const Error =()=>{
     return(
     <div>
         <h1>This is the error page_type</h1>
-        <h2>Fuck Off You dumb Ass ...What page do you want to go to</h2>
+        <h2>Please try to re-load the page</h2>
         <h4>{err.data}</h4>
         <h4>{err.status}: {err.statusText}</h4>
     </div>
