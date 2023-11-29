@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 import { SWIGGY_CARD} from "../utils/constants.js";
 import useOnlinestatus from "../utils/useOnlinestatus.js";
 //import useGetcard from "../utils/useGetcard.js";
+import usercontext from "../utils/usercontext.js";
+import { useContext } from "react";
+
 const Body = ()=>{
 
       const [getsearch,setsearch] = useState("");
@@ -25,7 +28,8 @@ const Body = ()=>{
         setfilteredRestaurantlist(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
-    
+    //const {setuserinfo,getuserinfo}= useContext(usercontext);
+       
       const Enhanced_card= Highercardcomponent(Restcard); 
 
       const internet_status = useOnlinestatus();
@@ -48,6 +52,9 @@ const Body = ()=>{
                 }}
                 >Search</button>
 
+{/*<input type="text" className=" border border-blue-950 p-1 m-3 shadow-xl rounded-lg" onChange={(e)=>{setuserinfo(e.target.value)} }  value={getuserinfo} />*/}
+
+
                 </div>
 
 
@@ -55,9 +62,19 @@ const Body = ()=>{
             <button className ="bg-orange-400 p-1 px-4 mx-4 mt-3 shadow-lg rounded-xl hover:cursor-pointer items-center" onClick={()=>{ 
                 const filter_list=getRestaurantlist.filter((res)=>res.info.avgRating>4);
                 setfilteredRestaurantlist(filter_list);
-                console.log(filter_list);
+                
 
             }}>Rating 4.0
+            + </button>
+            </div>
+
+            <div className="filter">
+            <button className ="bg-orange-400 p-1 px-4 mx-4 mt-3 shadow-lg rounded-xl hover:cursor-pointer items-center" onClick={()=>{ 
+                const filter_list=getRestaurantlist.filter((res)=>res.info.aggregatedDiscountInfoV3!=undefined);
+                setfilteredRestaurantlist(filter_list);
+                
+
+            }}>Offers 👍
             + </button>
             </div>
             </div>

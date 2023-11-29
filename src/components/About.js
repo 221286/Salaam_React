@@ -1,6 +1,8 @@
 import Classyuser from "./classyuser";
 import { Component } from "react";
 
+import usercontext from "../utils/usercontext";
+
 class Aboutus extends Component{
     constructor(props){
         super(props)
@@ -13,7 +15,8 @@ class Aboutus extends Component{
     render(){
         console.log("This is parent render");
         return (<div>
-                <Classyuser name={"Anis Osama"} contact={"8210218453"}></Classyuser>
+                 <usercontext.Consumer>{({Loginuser})=>(<Classyuser name={"Anis Osama"} contact={"8210218453"} value={Loginuser}></Classyuser>)}</usercontext.Consumer>
+                
                 </div>)}
 }
 export default Aboutus;
