@@ -20,3 +20,15 @@
  Tree shaking
  different developement and production bunndles
  chunking
+
+
+# Redux
+Install 2 libraries
+   React @reactjs/toolkit 
+   React-redux
+
+Build our store
+Connect our store to the app
+Create a slice(cart slice here)
+Dispatch out actions
+Read the data using selector
