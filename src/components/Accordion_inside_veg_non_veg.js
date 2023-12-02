@@ -2,6 +2,9 @@ import { useDispatch } from "react-redux";
 import { CDN_CLOUDINARY_UI } from "../utils/constants";
 import { addItems,removeItems } from "../../Store_and_slices/cartSlice";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+
+
 const Veg_nonveg = ({veg_nonveg})=>{
     const [getcount,setcount] = useState(0);
 
@@ -15,7 +18,8 @@ const Veg_nonveg = ({veg_nonveg})=>{
          remove_dispatched(removeItems(veg_nonveg))
         console.log(getcount);
     }
-    //console.log(veg_nonveg[1]);
+    //const appstore_data = useSelector((store)=>store.cart.items) 
+    //console.log(appstore_data);
     const {name,category,description,imageId,price}= veg_nonveg
     return (<div className="m-4 p-3 text-sm shadow-xl flex justify-between hover:bg-orange-200" ><div>
         <div className="flex justify-between m-4 wx-8/12 "><span className="underline">{name}</span><span className="underline">{category}</span></div>

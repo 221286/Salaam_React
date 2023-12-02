@@ -11,7 +11,7 @@ const Cart=() =>{
     
     //This is for removing duplicates from the store data values for cart
     const filtered_store_data=  [...store_data.reduce((map,obj)=>map.set(obj.id , obj),new Map()).values()];
-    console.log(filtered_store_data)
+    console.log(store_data)
 
     return (<div className="m-1 p-1 ">
         <div className="text-center "><h3 className="text-4xl font-bold text-orange-600">🚗Cart</h3></div>

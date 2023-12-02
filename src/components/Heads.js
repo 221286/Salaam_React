@@ -10,7 +10,7 @@ const Heads = ()=>{
     const internet_status = useOnlinestatus();
     const {Loginuser} = useContext(usercontext)
     const appstore_data = useSelector((store)=>store.cart.items) 
-    //console.log(appstore_data[0].id);
+    //console.log(appstore_data);
     
     return (<div className="flex justify-between border border-orange-700 rounded-lg p-3 mx-1 items-center shadow-lg">
             <div className="w-28">
